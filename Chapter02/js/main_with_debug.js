@@ -2,6 +2,7 @@
 function initialize(){
     cities();
 };
+console.log("1");
 //cities function with city name and population data to be added to a table
 function cities(){
     var cityPop = [ //cityPop variable to store array for city and population data
@@ -21,7 +22,7 @@ function cities(){
         city: 'Superior',
         population: 27244
     }
-];
+    ];
     //Table
     var table = document.createElement('table');
 	console.log("2");
@@ -39,14 +40,14 @@ function cities(){
     }
 
     document.querySelector("#myDiv").appendChild(table);//Adding to the table
-
+    console.log("3");
 addColumns(cityPop);
 function addColumns(cityPop){
 	var rows = document.querySelectorAll('tr');//Selecting all rows to add to it
 	document.querySelectorAll('tr').forEach(function(row,i){//For loop for populating city size column with data
 		if (i == 0){
 
-            row.insertAdjacntHTML('beforeend','<th>City Size</th>');
+            row.insertAdjacentHTML('beforeend','<th>City Size</th>');
         } else {
  
             var citySize;
@@ -65,6 +66,7 @@ function addColumns(cityPop){
 			var thirdRow = document.createElement('td')//Creating new element to keep city size data in
 			thirdRow.innerHTML= citySize //citySize will be what's written into the html
 			row.appendChild(thirdRow);//adding citySize to row
+            console.log("4");
 	};
 })}
 addEvents();
@@ -85,14 +87,16 @@ function addEvents(){
             } else {
                 color += ")";
         };
-        document.querySelector("table") = color;
+        document.querySelector("table");
         table.style.color = color;
     };
     function clickme(){//Click me function
  
         alert('Hey, you clicked me!');
+        console.log("5");
 	};
 	
 document.querySelector("table").addEventListener("click", clickme());
-document.addEventListener('DOMContentLoaded',initialize)//Calling initialize function
+
 })}}
+document.addEventListener('DOMContentLoaded',initialize)//Calling initialize function
